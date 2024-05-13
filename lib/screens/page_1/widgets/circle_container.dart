@@ -4,7 +4,7 @@ Widget circleContainer() {
   return Container(
     width: 5,
     height: 5,
-    decoration: BoxDecoration(
+    decoration: const BoxDecoration(
       color: Color(0xFFFFF6E5),
       shape: BoxShape.circle,
     ),

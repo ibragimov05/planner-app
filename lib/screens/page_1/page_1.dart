@@ -8,10 +8,10 @@ class MainPage extends StatelessWidget {
   MainPage({super.key});
 
   List<Map<String, dynamic>> rowContainers_data = [
-    {'color': Color(0xFFFAEBC8), 'icoPath': 'assets/icons/tea-leaf.png'},
-    {'color': Color(0xFFF0A591), 'icoPath': 'assets/icons/umbrella.png'},
-    {'color': Color(0xFFD2E6E6), 'icoPath': 'assets/icons/maple-leaf.png'},
-    {'color': Color(0xFFFACDAF), 'icoPath': 'assets/icons/shower.png'},
+    {'color': const Color(0xFFFAEBC8), 'icoPath': 'assets/icons/tea-leaf.png'},
+    {'color': const Color(0xFFF0A591), 'icoPath': 'assets/icons/umbrella.png'},
+    {'color': const Color(0xFFD2E6E6), 'icoPath': 'assets/icons/maple-leaf.png'},
+    {'color': const Color(0xFFFACDAF), 'icoPath': 'assets/icons/shower.png'},
   ];
 
   List<String> daySchedule_ls = ['Wedding', 'Birthdays', 'Party', 'Jogging'];
@@ -23,7 +23,7 @@ class MainPage extends StatelessWidget {
         child: Container(
           width: 375.w,
           height: 812.h,
-          color: Color(0xFFE17855),
+          color: const Color(0xFFE17855),
           child: Stack(
             clipBehavior: Clip.none,
             alignment: Alignment.topRight,
@@ -33,21 +33,19 @@ class MainPage extends StatelessWidget {
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
-              // 200.height(),
               Positioned(
                 top: 280.h,
-                // bottom: 1,
                 child: Container(
                   width: 375.w,
                   decoration: BoxDecoration(
-                    color: Color(0xFFE17855),
+                    color: const Color(0xFFE17855),
                     borderRadius: BorderRadius.circular(40.r),
                   ),
                   child: Column(
                     children: [
                       Padding(
                         padding:
-                            EdgeInsets.symmetric(horizontal: 40, vertical: 30),
+                            const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,7 +78,7 @@ class MainPage extends StatelessWidget {
                                   height: 40.h,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10.r),
-                                    image: DecorationImage(
+                                    image: const DecorationImage(
                                       image: AssetImage(
                                         'assets/images/profile_photo.png',
                                       ),
@@ -141,7 +139,7 @@ class MainPage extends StatelessWidget {
                                         TextSpan(
                                           text: 'Day',
                                           style: TextStyle(
-                                            color: Color(0xFF2D384B),
+                                            color: const Color(0xFF2D384B),
                                             fontSize: 23.sp,
                                             fontWeight: FontWeight.w800,
                                           ),
@@ -149,7 +147,7 @@ class MainPage extends StatelessWidget {
                                         TextSpan(
                                           text: ' Schedule',
                                           style: TextStyle(
-                                              color: Color(0xFF8C929A),
+                                              color: const Color(0xFF8C929A),
                                               fontSize: 23.sp),
                                         )
                                       ],
@@ -179,7 +177,7 @@ class MainPage extends StatelessWidget {
                                               Text(
                                                 daySchedule_ls[i],
                                                 style: TextStyle(
-                                                    color: Color(0xFF292929),
+                                                    color: const Color(0xFF292929),
                                                     fontSize: 17.sp,
                                                     fontWeight:
                                                         FontWeight.w700),
@@ -188,7 +186,7 @@ class MainPage extends StatelessWidget {
                                                 '03:50 time',
                                                 style: TextStyle(
                                                   fontSize: 12.sp,
-                                                  color: Color(0xFFC4C4C4),
+                                                  color: const Color(0xFFC4C4C4),
                                                 ),
                                               )
                                             ],
