@@ -21,7 +21,7 @@ class ContainerMaker extends StatelessWidget {
       child: Container(
         height: isSelected ? 120.h : 60.h,
         width: isSelected ? 100.h : 60.w,
-        margin: isSelected ? const EdgeInsets.only(left: 10) : null,
+        margin: isSelected ? const EdgeInsets.only(right: 10) : null,
         padding: EdgeInsets.all(13.sp),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.r),

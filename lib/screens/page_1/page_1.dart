@@ -100,102 +100,100 @@ class MainPage extends StatelessWidget {
                       ),
                       Stack(
                         children: [
-                          Positioned(
-                            child: Container(
-                              padding: EdgeInsets.only(
-                                left: 30.w,
-                                right: 30.w,
-                                top: 50.h,
-                                bottom: 30.h,
+                          Container(
+                            padding: EdgeInsets.only(
+                              left: 30.w,
+                              right: 30.w,
+                              top: 50.h,
+                              bottom: 30.h,
+                            ),
+                            width: 375.w,
+                            // color: Colors.white,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(40.r),
+                                topRight: Radius.circular(40.r),
                               ),
-                              width: 375.w,
-                              // color: Colors.white,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(40.r),
-                                  topRight: Radius.circular(40.r),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    for (var each in rowContainers_data)
+                                      ContainerMaker(
+                                        color: each['color'],
+                                        icoPath: each['icoPath'],
+                                        isSelected: false,
+                                      ),
+                                  ],
                                 ),
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
+                                35.height(),
+                                RichText(
+                                  text: TextSpan(
+                                    children: [
+                                      TextSpan(
+                                        text: 'Day',
+                                        style: TextStyle(
+                                          color: const Color(0xFF2D384B),
+                                          fontSize: 23.sp,
+                                          fontWeight: FontWeight.w800,
+                                        ),
+                                      ),
+                                      TextSpan(
+                                        text: ' Schedule',
+                                        style: TextStyle(
+                                            color: const Color(0xFF8C929A),
+                                            fontSize: 23.sp),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                35.height(),
+                                SingleChildScrollView(
+                                  scrollDirection: Axis.horizontal,
+                                  child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      for (var each in rowContainers_data)
-                                        ContainerMaker(
-                                          color: each['color'],
-                                          icoPath: each['icoPath'],
-                                          isSelected: false,
+                                      for (int i = 0;
+                                          i < rowContainers_data.length;
+                                          i++)
+
+                                        Column(
+                                          children: [
+                                            ContainerMaker(
+                                              color: rowContainers_data[i]
+                                                  ['color'],
+                                              icoPath: rowContainers_data[i]
+                                                  ['icoPath'],
+                                              isSelected: true,
+                                            ),
+                                            30.height(),
+                                            Text(
+                                              daySchedule_ls[i],
+                                              style: TextStyle(
+                                                  color: const Color(0xFF292929),
+                                                  fontSize: 17.sp,
+                                                  fontWeight:
+                                                      FontWeight.w700),
+                                            ),
+                                            Text(
+                                              '03:50 time',
+                                              style: TextStyle(
+                                                fontSize: 12.sp,
+                                                color: const Color(0xFFC4C4C4),
+                                              ),
+                                            )
+                                          ],
                                         ),
                                     ],
                                   ),
-                                  35.height(),
-                                  RichText(
-                                    text: TextSpan(
-                                      children: [
-                                        TextSpan(
-                                          text: 'Day',
-                                          style: TextStyle(
-                                            color: const Color(0xFF2D384B),
-                                            fontSize: 23.sp,
-                                            fontWeight: FontWeight.w800,
-                                          ),
-                                        ),
-                                        TextSpan(
-                                          text: ' Schedule',
-                                          style: TextStyle(
-                                              color: const Color(0xFF8C929A),
-                                              fontSize: 23.sp),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  35.height(),
-                                  SingleChildScrollView(
-                                    scrollDirection: Axis.horizontal,
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        for (int i = 0;
-                                            i < rowContainers_data.length;
-                                            i++)
-
-                                          Column(
-                                            children: [
-                                              ContainerMaker(
-                                                color: rowContainers_data[i]
-                                                    ['color'],
-                                                icoPath: rowContainers_data[i]
-                                                    ['icoPath'],
-                                                isSelected: true,
-                                              ),
-                                              30.height(),
-                                              Text(
-                                                daySchedule_ls[i],
-                                                style: TextStyle(
-                                                    color: const Color(0xFF292929),
-                                                    fontSize: 17.sp,
-                                                    fontWeight:
-                                                        FontWeight.w700),
-                                              ),
-                                              Text(
-                                                '03:50 time',
-                                                style: TextStyle(
-                                                  fontSize: 12.sp,
-                                                  color: const Color(0xFFC4C4C4),
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                      ],
-                                    ),
-                                  )
-                                ],
-                              ),
+                                )
+                              ],
                             ),
                           ),
                         ],
